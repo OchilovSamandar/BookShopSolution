@@ -18,7 +18,7 @@ namespace BookShop.Models
 
         public string Username { get; set; }
 
-        public string Password { get; set; }
+        public string Passwrd { get; set; }
 
         public bool IsEnable { get; set; }
 

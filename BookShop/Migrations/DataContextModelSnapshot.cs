@@ -120,7 +120,7 @@ namespace BookShop.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Password")
+                    b.Property<string>("Passwrd")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 

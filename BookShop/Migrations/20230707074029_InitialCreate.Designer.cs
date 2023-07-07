@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BookShop.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20230707061709_InitialCreate")]
+    [Migration("20230707074029_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -122,7 +122,7 @@ namespace BookShop.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Password")
+                    b.Property<string>("Passwrd")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 

@@ -1,4 +1,5 @@
 ﻿using BookShop.Data;
+using BookShop.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -24,6 +25,14 @@ namespace BookShop.Controllers
                 return NotFound();
             }
             return Ok(item);
-        } 
+        }
+
+        [HttpPost("/saveBook")]
+        public IActionResult SaveBook([FromBody] Book book)
+        {
+            _dataContext.Books.Add(book);
+            _dataContext.SaveChanges();
+            return Ok(book);
+        }
     }
 }
