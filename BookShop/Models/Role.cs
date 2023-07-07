@@ -11,6 +11,6 @@ namespace BookShop.Models
         public List<Permission> Permissions { get; set; }
 
 
-    }
+    
     }
 }
