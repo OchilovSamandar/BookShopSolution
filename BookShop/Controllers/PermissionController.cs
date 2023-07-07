@@ -2,6 +2,7 @@
 using BookShop.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace BookShop.Controllers
 {
@@ -23,13 +24,14 @@ namespace BookShop.Controllers
             {
                 return BadRequest("permission null keldi");
             }
+            permission.Id = 0;// _dataContext.Entry(permission).State = EntityState.Added;
 
             _dataContext.Permissions.Add(permission);
             _dataContext.SaveChanges();
             return Ok("Saved");
         }
 
-        [HttpGet("{id")]
+        [HttpGet("{id}")]
         public IActionResult GetById(int id)
         {
             Permission? permission  = _dataContext.Permissions.FirstOrDefault(i => i.Id == id);
