@@ -7,13 +7,13 @@ namespace BookShop.Dto
         public string Name { get; set; }
         public string Description { get; set; }
 
-        public List<Permission> Permissions { get; set; }
+        public List<int> PermissionId { get; set; }
 
-        public RoleDto(string name, string description, List<Permission> permissions)
+        public RoleDto(string name, string description, List<int> permissionId)
         {
             Name = name;
             Description = description;
-            Permissions = permissions;
+            PermissionId = permissionId;
         }
     }
 }

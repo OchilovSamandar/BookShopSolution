@@ -17,15 +17,21 @@ namespace BookShop.Controllers
             _dataContext = dataContext;
         }
 
-        [HttpPost("/save")]
-        public IActionResult SaveRole([FromBody] Role roleDto)
+        [HttpPost]
+        public IActionResult SaveRole([FromBody] RoleDto roleDto)
         {
             if (roleDto == null)
             {
                 return BadRequest("null keldi");
             }
+            var role = new Role
+            {
+                Name = roleDto.Name,
+                Description = roleDto.Description,
 
-            _dataContext.Roles.Add(roleDto);
+            };
+
+            _dataContext.Roles.Add(role);
             _dataContext.SaveChanges();
             return Ok("Saqlandi");
         }
